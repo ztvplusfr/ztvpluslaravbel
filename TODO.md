@@ -1,0 +1,5 @@
+- [x] Modify HomeController to include watchlist statuses for featured items
+- [x] Update home.blade.php to pass watchlistStatuses to JS and use them for initial icon states
+- [x] Fix icon color to differentiate when in watchlist (red filled vs white outline)
+- [x] Fix onclick handler to use visual state instead of AJAX check to avoid errors
+- [x] Implement optimistic updates: change icon immediately on click, revert on error

@@ -134,4 +134,13 @@ Route::middleware([
         Route::put('{video}', [App\Http\Controllers\VideoController::class, 'update'])->name('update');
         Route::delete('{video}', [App\Http\Controllers\VideoController::class, 'destroy'])->name('destroy');
     });
+
+// Routes pour l'installeur
+Route::middleware(['install'])->group(function () {
+    Route::get('/install', [App\Http\Controllers\InstallController::class, 'welcome'])->name('install.welcome');
+    Route::get('/install/configure', [App\Http\Controllers\InstallController::class, 'configure'])->name('install.configure');
+    Route::post('/install/configure', [App\Http\Controllers\InstallController::class, 'saveConfig'])->name('install.saveConfig');
+    Route::get('/install/install', [App\Http\Controllers\InstallController::class, 'install'])->name('install.install');
+    Route::post('/install/install', [App\Http\Controllers\InstallController::class, 'install'])->name('install.saveInstall');
+});
 });
